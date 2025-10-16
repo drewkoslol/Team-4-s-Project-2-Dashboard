@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 4's Project 2 Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for a sleeker dropdown arrow */
+        .custom-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat;
+            background-position-x: 98%;
+            background-position-y: 50%;
+            padding-right: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-gray-200">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-8 md:mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-white">Team 4's Project 2 Dashboard</h1>
+            <p class="text-slate-500 mt-2 italic">Created by Drew Koskinen</p>
+            <p class="text-slate-400 mt-2">Track deliverables and progress for Prelim 2</p>
+        </header>
+
+        <!-- Task Grid -->
+        <div class="space-y-4" id="task-list">
+
+            <!-- Task Card Template -->
+            <!-- This structure will be used for all tasks -->
+            <div class="task-card bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 md:p-5 shadow-lg transition-all duration-300 hover:border-teal-500/50">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                    
+                    <!-- Deliverable Name -->
+                    <div class="md:col-span-4">
+                        <h2 class="font-bold text-lg text-white">WBS/Network Diagram Review Sheet</h2>
+                    </div>
+
+                    <!-- Assigned Team Members -->
+                    <div class="md:col-span-3">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-slate-300">Sarp & Ava</span>
+                        </div>
+                    </div>
+
+                    <!-- Due Date -->
+                    <div class="md:col-span-2">
+                         <div class="flex items-center font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+                               <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="due-date" data-date="2025-10-16">Oct 16, 2025</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Status Dropdown & Indicator -->
+                    <div class="md:col-span-3 flex items-center gap-3">
+                         <span class="status-indicator h-4 w-4 rounded-full flex-shrink-0" title="Not Started"></span>
+                         <select class="status-select custom-select w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-teal-500">
+                             <option value="not-started">Not Started</option>
+                             <option value="in-progress">In Progress</option>
+                             <option value="completed">Completed</option>
+                         </select>
+                    </div>
+
+                </div>
+            </div>
+
+             <div class="task-card bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 md:p-5 shadow-lg transition-all duration-300 hover:border-teal-500/50">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                    <div class="md:col-span-4"><h2 class="font-bold text-lg text-white">Network Diagram Practice (Rough Draft)</h2></div>
+                    <div class="md:col-span-3">
+                        <div class="flex items-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
+                            <span class="text-slate-300">Ben & Josh</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="flex items-center font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+                            <span class="due-date" data-date="2025-10-16">Oct 16, 2025</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 flex items-center gap-3">
+                        <span class="status-indicator h-4 w-4 rounded-full flex-shrink-0" title="Not Started"></span>
+                        <select class="status-select custom-select w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-teal-500">
+                             <option value="not-started">Not Started</option>
+                             <option value="in-progress">In Progress</option>
+                             <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 md:p-5 shadow-lg transition-all duration-300 hover:border-teal-500/50">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                    <div class="md:col-span-4"><h2 class="font-bold text-lg text-white">Network Diagram Practice (Final Version)</h2></div>
+                    <div class="md:col-span-3">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
+                            <span class="text-slate-300">Ben & Josh</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="flex items-center font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+                            <span class="due-date" data-date="2025-10-23">Oct 23, 2025</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 flex items-center gap-3">
+                         <span class="status-indicator h-4 w-4 rounded-full flex-shrink-0" title="Not Started"></span>
+                         <select class="status-select custom-select w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-teal-500">
+                             <option value="not-started">Not Started</option>
+                             <option value="in-progress">In Progress</option>
+                             <option value="completed">Completed</option>
+                         </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 md:p-5 shadow-lg transition-all duration-300 hover:border-teal-500/50">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                    <div class="md:col-span-4"><h2 class="font-bold text-lg text-white">Prelim 1 Review Sheet</h2></div>
+                    <div class="md:col-span-3">
+                        <div class="flex items-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
+                            <span class="text-slate-300">Emma & Ryan</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="flex items-center font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+                            <span class="text-slate-500">TBD</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 flex items-center gap-3">
+                         <span class="status-indicator h-4 w-4 rounded-full flex-shrink-0" title="Not Started"></span>
+                         <select class="status-select custom-select w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-teal-500">
+                             <option value="not-started">Not Started</option>
+                             <option value="in-progress">In Progress</option>
+                             <option value="completed">Completed</option>
+                         </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 md:p-5 shadow-lg transition-all duration-300 hover:border-teal-500/50">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                    <div class="md:col-span-4"><h2 class="font-bold text-lg text-white">Quizlet (Post-Prelim 1)</h2></div>
+                    <div class="md:col-span-3">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
+                            <span class="text-slate-300">Ziyu, Yuyang, Jason, & Fan</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <div class="flex items-center font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+                             <span class="text-slate-500">TBD</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 flex items-center gap-3">
+                         <span class="status-indicator h-4 w-4 rounded-full flex-shrink-0" title="Not Started"></span>
+                         <select class="status-select custom-select w-full bg-slate-700 border border-slate-600 rounded-md px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-teal-500">
+                             <option value="not-started">Not Started</option>
+                             <option value="in-progress">In Progress</option>
+                             <option value="completed">Completed</option>
+                         </select>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- End Task Grid -->
+         
+        <footer class="text-center mt-12">
+            <p class="text-sm text-slate-500">Last updated: <span id="last-updated"></span></p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusColors = {
+                'not-started': 'bg-gray-500',
+                'in-progress': 'bg-orange-400',
+                'completed': 'bg-green-500'
+            };
+            
+            const statusText = {
+                 'not-started': 'Not Started',
+                'in-progress': 'In Progress',
+                'completed': 'Completed'
+            }
+
+            const taskCards = document.querySelectorAll('.task-card');
+
+            function updateStatus(card) {
+                const select = card.querySelector('.status-select');
+                const indicator = card.querySelector('.status-indicator');
+                const selectedValue = select.value;
+                
+                // Update indicator color
+                indicator.className = 'status-indicator h-4 w-4 rounded-full flex-shrink-0'; // Reset classes
+                indicator.classList.add(statusColors[selectedValue]);
+                indicator.title = statusText[selectedValue];
+            }
+
+            function checkDueDates() {
+                // Set "today" to a fixed date for consistent output.
+                // In a real application, you would use new Date().
+                const today = new Date('2025-10-15T23:59:59'); 
+                
+                const dueSpans = document.querySelectorAll('.due-date');
+
+                dueSpans.forEach(span => {
+                    const dueDateStr = span.dataset.date;
+                    if (!dueDateStr) return;
+
+                    const dueDate = new Date(dueDateStr + 'T23:59:59'); // Compare end of day
+
+                    // Reset text color
+                    span.classList.remove('text-red-400', 'text-yellow-400', 'text-slate-300');
+
+                    if (dueDate < today) {
+                        span.classList.add('text-red-400'); // Overdue
+                        span.textContent += ' (Overdue)';
+                    } else if (dueDate.toDateString() === today.toDateString()) {
+                        span.classList.add('text-yellow-400'); // Due Today
+                        span.textContent += ' (Due Today!)'
+                    } else {
+                         span.classList.add('text-slate-300'); // Future date
+                    }
+                });
+            }
+            
+            function updateTimestamp() {
+                 const timestampEl = document.getElementById('last-updated');
+                 if(timestampEl) {
+                     timestampEl.textContent = new Date().toLocaleString();
+                 }
+            }
+
+
+            taskCards.forEach(card => {
+                const select = card.querySelector('.status-select');
+                
+                // Set initial state
+                updateStatus(card);
+
+                // Add event listener
+                select.addEventListener('change', () => {
+                     updateStatus(card);
+                     updateTimestamp();
+                });
+            });
+
+            // Initial calls
+            checkDueDates();
+            updateTimestamp();
+        });
+    </script>
+</body>
+</html>
+
